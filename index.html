@@ -1,101 +1,76 @@
 <!DOCTYPE html>
 <html>
-<head>
-<script>
-
-     
-    function dis(val) 
-    { 
-      document.getElementById("result").value+=val 
-    } 
+   <head>
+      <title>perimeter and area</title>
+   </head>
+   <body>
+      <button onclick="myFunction()">circle</button>
+      <button onclick="myFunction1()">rectangle</button>
+      <button onclick="myFunction3()">Prime</button>
+      <p id="Demo"></p>
+      <script type="text/javascript">
+         function myFunction()
+         {
+         var n=prompt("enter the value of radius");
+         var perimeter;
+         var area;
+         if (n==null || n=="")
+         {
+         alert("user cancelled the prompt");}
+         else if (isNaN(n))
+         {
+         alert("only numbers are allowed");
+         }
+         else{perimeter=2*3.14*n;
+         area=3.14*n*n;
+         }
+         document.getElementById("Demo").innerHTML+="perimeter="+perimeter;
+         document.getElementById("Demo").innerHTML+="<br>area="+area;
+         }
+         function myFunction1()
+         {
+         var length=prompt("enter the value of length");
+         if (length==null || length=="")
+         {
+         alert("user cancelled the prompt");
+         }
+         else if (isNaN(length))
+         {
+         alert("only numbers are allowed");
+         }
+         else{
+         var breadth=prompt("enter the value of breadth");
+          if (breadth==null || breadth=="")
+         {
+         alert("user cancelled the prompt");}
+         else if (isNaN(breadth))
+         {
+         alert("only numbers are allowed");
+         }else
+          {
+         perimeter=2*length+2*breadth;
+         area=length*breadth;
+         
+         document.getElementById("Demo").innerHTML+="perimeter="+perimeter;
+         document.getElementById("Demo").innerHTML+="<br>area="+area;
+         }
+         }
+         }
+         function isPrime(n){
+         for(var i=2;i<=n/2;i++)
+         if(n%i==0)
+         return "";
+         return n+"<br>";
+         }
+         function myFunction3(){
     
-     
-    function solve() 
-    { 
-      let x = document.getElementById("result").value 
-      let y = eval(x) 
-      document.getElementById("result").value = y 
-    } 
-    
-     
-    function clr() 
-    { 
-      document.getElementById("result").value = "" 
-    } 
-</script>
-<style>
-	.title {
-		margin-bottom: 12px;
-		background-color: black;
-		color: white;
-		width: 400px;
-		border: solid black 2px;
-		font-style: italic;
-	}
-	input[type="button"]
-	{
-		background-color: black;
-		color: white;
-		width: 100px;
-		border: solid white;
-	}
-	input[type="text"]
-	{
-		color: black;
-		background-color: white;
-		font-style: italic;
-		width: 300px;
-	}
-</style>
-</head>
-
-<body>
-	<div class= title >Calculator</div>
-	<table border="1">
-		<tr>
-			<td colspan="3"><input type="text" id="result"/></td>
-			<td><input type="button" value="c" onclick="clr()"/> </td>
-		</tr>
-		<tr>
-			<td><input type="button" value="1" onclick="dis('1')"/> </td>
-
-			<td><input type="button" value="2" onclick="dis('2')"/> </td>
-
-			<td><input type="button" value="3" onclick="dis('3')"/> </td>
-
-			<td><input type="button" value="/" onclick="dis('/')"/> </td>
-		</tr>
-		<tr>
-			<td><input type="button" value="4" onclick="dis('4')"/> </td> 
-
-            <td><input type="button" value="5" onclick="dis('5')"/> </td> 
-
-            <td><input type="button" value="6" onclick="dis('6')"/> </td> 
-
-            <td><input type="button" value="-" onclick="dis('-')"/> </td> 
-
-		</tr>
-		<tr>
-			<td><input type="button" value="7" onclick="dis('7')"/> </td> 
-
-            <td><input type="button" value="8" onclick="dis('8')"/> </td> 
-
-            <td><input type="button" value="9" onclick="dis('9')"/> </td> 
-
-            <td><input type="button" value="+" onclick="dis('+')"/> </td> 
-
-		</tr>
-		<tr>
-			 <td><input type="button" value="." onclick="dis('.')"/> </td> 
-
-             <td><input type="button" value="0" onclick="dis('0')"/> </td>
-             <td><input type="button" value="=" onclick="solve()"/> </td> 
-
-             <td><input type="button" value="*" onclick="dis('*')"/> </td>
-		</tr>
-
-
-
-	</table>
-</body>
-  </html>
+         var n,result="";
+         n = prompt("Enter a number");
+         for(var i=2;i<Number(n);i++)
+         result += isPrime(i);
+         document.getElementById("Demo").innerHTML=result;
+         }
+         
+      </script>
+   </body>
+</html>
